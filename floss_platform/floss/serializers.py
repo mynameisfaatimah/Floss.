@@ -4,10 +4,14 @@ from .models import Treatment
 
 class SymptomSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
+        view_name='symptoms_detail'
         model = Symptoms
-        fields = ['url', 'id', 'pain_level', 'pain_location', ]
+        fields = ['url', 'id', 'pain_level', 'pain_location']
 
 class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 
+        view_name='treatment_detail',
         model = Treatment
-        fields = ['name', 'description']
+        fields = ['Symptom', 'treatment_name', 'treatment_description']
+        depth = 1
+
