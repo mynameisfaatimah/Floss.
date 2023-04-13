@@ -19,6 +19,6 @@ from .views import TreatmentList, TreatmentDetail, SymptomList, SymptomDetail
 urlpatterns = [
     path('treatments/', TreatmentList.as_view(), name='treatment_list'),
     path('treatments/<int:pk>/', TreatmentDetail.as_view(), name='treatment_detail'),
-    path('symptoms/', SymptomList.as_view(), name='symptoms_list'),
+    path('symptoms/', SymptomList.as_view(), name='symptoms_detail'),
     path('symptoms/<int:pk>/', SymptomDetail.as_view(), name='symptoms_detail'),
 ]

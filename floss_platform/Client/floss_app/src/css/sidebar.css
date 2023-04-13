@@ -1,0 +1,31 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    display: none;
+  }
+  
+  .sidebar.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .toggle-sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
