@@ -5,8 +5,9 @@ import {  Routes,  Route } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import AboutUs from './Components/AboutUs';
 import Login from './Components/Login';
+import Register from './Components/Register';
 import Sidebar from './Components/Navbar';
-import { FaCarSide } from 'react-icons/fa';
+//import { FaCarSide } from 'react-icons/fa';
 
 function App() {
   const [symptoms, setSymptoms] = useState([]);
@@ -43,6 +44,7 @@ function App() {
           }/>
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       
     );
