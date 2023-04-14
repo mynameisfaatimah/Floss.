@@ -13,9 +13,9 @@ function TreatmentList() {
   }, []);
 
   return (
-    <div>
+    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px' }}>
       <h1>Treatments</h1>
-      <Table striped bordered hover>
+      <Table >
         <thead>
           <tr>
             <th>Symptom</th>

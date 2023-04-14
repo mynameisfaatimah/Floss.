@@ -13,9 +13,9 @@ function SymptomList() {
   }, []);
 
   return (
-    <div>
+    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', width: '520px' }}>
       <h1>Current Symptoms</h1>
-      <Table>
+      <Table fluid>
         <thead>
           <tr>
             <th>Date</th>

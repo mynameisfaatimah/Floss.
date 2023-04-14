@@ -14,7 +14,8 @@ function SymptomsForm() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px' }}>
+        <h1>Symtoms Form</h1>
       <Form.Group controlId="formPainLevel">
         <Form.Label>Pain Level</Form.Label>
         <Form.Control as="select" value={painLevel} onChange={(event) => setPainLevel(event.target.value)}>
