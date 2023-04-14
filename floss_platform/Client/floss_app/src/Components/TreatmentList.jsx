@@ -13,8 +13,8 @@ function TreatmentList() {
   }, []);
 
   return (
-    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px' }}>
-      <h1>Treatments</h1>
+    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', color: 'white'}}>
+      <h3>Treatments</h3>
       <Table >
         <thead>
           <tr>

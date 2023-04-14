@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import {useNavigate} from 'react-router-dom'
 
 
@@ -7,16 +9,43 @@ function SymptomsForm() {
   const [painLevel, setPainLevel] = useState('');
   const [painLocation, setPainLocation] = useState('');
   const [painType, setPainType] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
 
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Submit form data to backend
+  
+    const formData = new FormData(event.target);
+    const response = await fetch('/api/symptoms', {
+      method: 'POST',
+      body: formData
+    });
+  
+    if (response.ok) {
+      console.log('Symptoms form submitted successfully!');
+      // TODO: Do something after the form is submitted successfully
+    } else {
+      console.error('Failed to submit symptoms form:', response.status, response.statusText);
+      // TODO: Handle the error
+    }
   };
+  
 
   return (
-    <Form onSubmit={handleSubmit} style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px' }}>
-        <h1>Symtoms Form</h1>
-      <Form.Group controlId="formPainLevel">
+    <Form onSubmit={handleSubmit} style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', paddingBottom: '10px', color: 'white' }}>
+        <h3>Symtoms Form</h3>
+        <Form.Group controlId="formDate" style={{ paddingBottom: '10px' }}>
+  <Form.Label>Date</Form.Label>
+  <DatePicker
+    selected={selectedDate}
+    onChange={(date) => setSelectedDate(date)}
+    dateFormat="MM/dd/yyyy"
+    isClearable
+    placeholderText="Select a date"
+  />
+</Form.Group>
+
+      <Form.Group controlId="formPainLevel" style={{paddingBottom: '10px'}}>
         <Form.Label>Pain Level</Form.Label>
         <Form.Control as="select" value={painLevel} onChange={(event) => setPainLevel(event.target.value)}>
          <option value="">Select Pain Level</option>
@@ -26,7 +55,7 @@ function SymptomsForm() {
         </Form.Control>
       </Form.Group>
 
-      <Form.Group controlId="formPainLocation">
+      <Form.Group controlId="formPainLocation" style={{paddingBottom: '10px'}}>
         <Form.Label>Pain Location</Form.Label>
         <Form.Control as="select" value={painLocation} onChange={(event) => setPainLocation(event.target.value)}>
           
@@ -39,7 +68,7 @@ function SymptomsForm() {
         </Form.Control>
       </Form.Group>
 
-      <Form.Group controlId="formPainType">
+      <Form.Group controlId="formPainType" style={{paddingBottom: '10px'}}>
         <Form.Label>Pain Type</Form.Label>
         <Form.Control as="select" value={painType} onChange={(event) => setPainType(event.target.value)}>
         <option value="">Select Type of Pain</option>
@@ -50,9 +79,9 @@ function SymptomsForm() {
           <option value="TS">Temperature Sensitive</option>
           <option value="N">None</option>
         </Form.Control>
-      </Form.Group>
+      </Form.Group >
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" >
         Submit
       </Button>
     </Form>

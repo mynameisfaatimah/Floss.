@@ -14,7 +14,7 @@ function Dashboard(props) {
      <img
             src={logo}
             alt="Logo"
-            style={{ width: "300px", display: "block", margin: "auto" }}
+            style={{ width: "300px", display: "block", margin: "auto", alignItems:'center' }}
           />
         </div> 
     <Container fluid style={{ border: '1px solid black', backgroundColor: '#C3E8FF' }}>

@@ -20,10 +20,13 @@ const Sidebar = () => {
             <NavLink href="#">Dashboard</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Symptoms</NavLink>
+            <NavLink href="#">Dental Resources</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Treatments</NavLink>
+            <NavLink href="#">Calendar</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Logout</NavLink>
           </NavItem>
         </Nav>
       </div>
