@@ -13,13 +13,16 @@ const Register = () => {
   };
 
   return (
-    <Container>
+    <Container style={{justifyContent: 'center'}}>
       <img
             src={logo}
             alt="Logo"
             style={{ width: "300px", display: "block", margin: "auto" }}
           />
-      <h2>Register</h2>
+          
+        <body style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', width: '520px', height: '300px'}}>
+      <h2 className="text-center">Register</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -55,6 +58,8 @@ const Register = () => {
           Register
         </Button>
       </Form>
+      </div>
+      </body>
     </Container>
   );
 };

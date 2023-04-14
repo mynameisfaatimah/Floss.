@@ -22,6 +22,7 @@ from .models import Treatment, Symptoms
 from .serializers import TreatmentSerializer, SymptomSerializer
 
 
+
 class TreatmentList(generics.ListCreateAPIView):
     queryset = Treatment.objects.all()
     serializer_class = TreatmentSerializer
@@ -35,11 +36,15 @@ class TreatmentDetail(generics.RetrieveUpdateDestroyAPIView):
 class SymptomList(generics.ListCreateAPIView):
     queryset = Symptoms.objects.all()
     serializer_class = SymptomSerializer
+    authentication_classes = []
+    permission_classes = []
 
 
 class SymptomDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Symptoms.objects.all()
     serializer_class = SymptomSerializer
+    authentication_classes = []
+    permission_classes = []
 
 
 
