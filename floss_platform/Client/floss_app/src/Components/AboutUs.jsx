@@ -8,10 +8,11 @@ const AboutUs = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="/">
-          <img
-            src={logo}
-            alt="Logo"
-          />
+          
+
+  <img src={logo} alt="Logo" />
+
+
 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import logo from '../assets/logo.png'
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +14,12 @@ const Register = () => {
 
   return (
     <Container>
-      <h1>Register</h1>
+      <img
+            src={logo}
+            alt="Logo"
+            style={{ width: "300px", display: "block", margin: "auto" }}
+          />
+      <h2>Register</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

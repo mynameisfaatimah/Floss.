@@ -15,7 +15,7 @@ function SymptomList() {
   return (
     <div>
       <h1>Current Symptoms</h1>
-      <Table striped bordered hover>
+      <Table>
         <thead>
           <tr>
             <th>Date</th>

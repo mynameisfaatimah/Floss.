@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import logo from '../assets/logo.png'
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,12 @@ const LoginPage = () => {
 
   return (
     <Container className="mt-5">
-      <h1 className="text-center">Login</h1>
+        <img
+            src={logo}
+            alt="Logo"
+            style={{ width: "300px", display: "block", margin: "auto" }}
+          />
+      <h2 className="text-center">Login</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

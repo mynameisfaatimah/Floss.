@@ -3,12 +3,20 @@ import { Container, Row, Col } from 'react-bootstrap';
 import SymptomsForm from './SymptomsForm';
 import TreatmentList from './TreatmentList';
 import SymptomsList from './SymptomsList';
+import logo from '../assets/logo.png'
 
 function Dashboard(props) {
   const { symptoms, treatments } = props;
 
   return (
     <>
+     <div style={{ height: '175px' }}>
+     <img
+            src={logo}
+            alt="Logo"
+            style={{ width: "300px", display: "block", margin: "auto" }}
+          />
+        </div> 
     <Container fluid>
       <Row>
         <Col md={6}>
