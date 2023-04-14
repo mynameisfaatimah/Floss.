@@ -15,6 +15,7 @@ const Sidebar = () => {
     <>
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <Nav vertical>
+        <div style={{ height: '50px' }}></div>
           <NavItem>
             <NavLink href="#">Dashboard</NavLink>
           </NavItem>
