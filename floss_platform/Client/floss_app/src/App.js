@@ -7,6 +7,7 @@ import AboutUs from './Components/AboutUs';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Sidebar from './Components/Navbar';
+import SymptomsForm from './Components/SymptomsForm';
 //import { FaCarSide } from 'react-icons/fa';
 
 function App() {
@@ -42,9 +43,12 @@ function App() {
           <Dashboard symptoms={symptoms} treatments={treatments} />
           </div>
           }/>
+          <Route
+          path="/symptomsform" element={<SymptomsForm BASE_URL={BASE_URL}/>}
+          />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} /> */}
         </Routes>
       
     );

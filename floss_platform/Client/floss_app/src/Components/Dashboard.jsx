@@ -17,7 +17,7 @@ function Dashboard(props) {
             style={{ width: "300px", display: "block", margin: "auto", alignItems:'center' }}
           />
         </div> 
-    <Container fluid style={{ border: '1px solid black', backgroundColor: '#C3E8FF' }}>
+    <Container fluid={true} style={{ border: '1px solid black', backgroundColor: '#C3E8FF' }}>
       <Row>
         <Col md={6}>
           <SymptomsForm />

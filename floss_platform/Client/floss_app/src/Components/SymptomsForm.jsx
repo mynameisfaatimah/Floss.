@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import { BASE_URL } from '../constants';
 
 
-function SymptomsForm() {
+
+function SymptomsForm(props) {
   const [painLevel, setPainLevel] = useState('');
   const [painLocation, setPainLocation] = useState('');
   const [painType, setPainType] = useState('');
@@ -16,18 +19,18 @@ function SymptomsForm() {
     event.preventDefault();
   
     const formData = new FormData(event.target);
-    const response = await fetch('/api/symptoms', {
-      method: 'POST',
+    const response = await axios.post(`${BASE_URL}/symptoms/`, {
+       method: 'POST',
       body: formData
     });
-  
-    if (response.ok) {
-      console.log('Symptoms form submitted successfully!');
-      // TODO: Do something after the form is submitted successfully
-    } else {
-      console.error('Failed to submit symptoms form:', response.status, response.statusText);
-      // TODO: Handle the error
-    }
+   console.log(response)
+    // if (response.ok) {
+    //   console.log('Symptoms form submitted successfully!');
+    //   // TODO: Do something after the form is submitted successfully
+    // } else {
+    //   console.error('Failed to submit symptoms form:', response.status, response.statusText);
+    //   // TODO: Handle the error
+    // }
   };
   
 

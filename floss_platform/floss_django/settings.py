@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'floss',
     'rest_framework',
     'corsheaders',
-    'form.date_field|datepicker'
+    'bootstrap_datepicker_plus'
 ]
 
 CORS_ALLOWED_ORIGINS = [
