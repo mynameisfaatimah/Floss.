@@ -1,4 +1,5 @@
 from django.db import models
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 # Create your models here.
 
@@ -42,6 +43,10 @@ class Symptoms(models.Model):
         max_length=100,
         choices=PAIN_TYPE_CHOICES,
         default='N'
+    )
+    date = models.CharField(
+        max_length=100,
+
     )
 
 

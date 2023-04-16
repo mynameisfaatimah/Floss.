@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { BASE_URL } from '../constants';
+import { SymptomContext } from '../context/SymptomsContext'
+
 
 
 
@@ -14,23 +16,24 @@ function SymptomsForm(props) {
   const [painType, setPainType] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
 
+  const { symptoms, setSymptoms} = useContext(SymptomContext)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    
   
     const formData = new FormData(event.target);
     const response = await axios.post(`${BASE_URL}/symptoms/`, {
        method: 'POST',
       body: formData
     });
-   console.log(response)
-    // if (response.ok) {
-    //   console.log('Symptoms form submitted successfully!');
-    //   // TODO: Do something after the form is submitted successfully
-    // } else {
-    //   console.error('Failed to submit symptoms form:', response.status, response.statusText);
-    //   // TODO: Handle the error
-    // }
+
+    const getSymptoms = async () => {
+      const res = await axios.get(`${BASE_URL}/symptoms/`)
+      setSymptoms(res.data)
+    }
+    getSymptoms()
   };
   
 

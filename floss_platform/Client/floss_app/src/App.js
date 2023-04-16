@@ -16,14 +16,15 @@ function App() {
   const BASE_URL = "http://localhost:8000"
 
   
-    useEffect(()=>{
-      const getSymptoms = async () => {
-        const res = await axios.get(`${BASE_URL}/symptoms/`)
-        console.log(res.data)
-        setSymptoms(res.data)
-      }
-      getSymptoms()
-    }, [])
+    // useEffect(()=>{
+    //   const getSymptoms = async () => {
+    //     const res = await axios.get(`${BASE_URL}/symptoms/`)
+    //     console.log(res.data)
+    //     console.log('hi3')
+    //     setSymptoms(res.data)
+    //   }
+    //   getSymptoms()
+    // }, [])
     // useEffect(()=>{
     //   const getTreatments = async () => {
     //     const res = await axios.get(`${BASE_URL}/treatments/`)
@@ -40,7 +41,7 @@ function App() {
           <Route path="/" element={
             <div>
             <Sidebar/>
-          <Dashboard symptoms={symptoms} treatments={treatments} />
+          <Dashboard />
           </div>
           }/>
           <Route
