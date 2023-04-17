@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, {  useEffect, useContext } from 'react';
 import { Table } from 'react-bootstrap';
 import { SymptomContext } from '../context/SymptomsContext';
 import axios from 'axios';
@@ -12,7 +12,7 @@ function SymptomList() {
   const handleDelete = async (id) => {
     try {
       // Make a DELETE request to the symptom API endpoint with the ID of the symptom to delete
-      const response = await axios.delete(`${BASE_URL}/symptoms/${id}`);
+      const response = await axios.delete(`${BASE_URL}/symptoms/${id}/`);
       if (response.status === 204) {
         console.log(response)
         console.log('delete')
@@ -34,23 +34,24 @@ function SymptomList() {
         setSymptoms(res.data)
       }
       getSymptoms()
-    }, [])
+    }, [setSymptoms])
 
   return (
     <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', width: '520px', color:'white' }}>
       <h3>Current Symptoms</h3>
-      <Table fluid="true">
-        <thead>
+      
+      <Table fluid="true" >
+        <thead style={{color:'white'}}>
           <tr>
             <th>Date</th>
             <th>Pain Level</th>
             <th>Pain Location</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{color:'white'}}>
           {symptoms.map(symptom => (
             <tr key={symptom.id}>
-              <td>{symptom.date}</td>
+              <td>{new Date(symptom.date).toLocaleDateString("en-US")}</td>
               <td>{symptom.pain_level}</td>
               <td>{symptom.pain_location}</td>
               <td><button onClick={() => handleDelete(symptom.id)}>Delete</button></td>

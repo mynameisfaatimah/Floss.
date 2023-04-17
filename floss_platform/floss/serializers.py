@@ -8,17 +8,18 @@ class SymptomSerializer(serializers.HyperlinkedModelSerializer):
         model = Symptoms
         fields = ['id', 'pain_level', 'pain_location', 'date']
 
-class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
+class TreatmentSerializer(serializers.ModelSerializer):
 
-    # symptom = serializers.HyperlinkedRelatedField(
-    #     view_name='symptoms_detail',
-    #     many=False,
-    #     read_only=True
-    # )
+    Symptom = serializers.SlugRelatedField(
+        # view_name='symptoms_detail',
+        many=False,
+        read_only=True,
+        slug_field='date'
+    )
 
     class Meta: 
         view_name='treatment_detail',
         model = Treatment
-        fields = ['symptom', 'treatment_name', 'treatment_description']
+        fields = ['Symptom', 'treatment_name', 'treatment_description']
         depth = 1
 

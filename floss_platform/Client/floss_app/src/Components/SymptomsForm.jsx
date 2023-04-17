@@ -15,7 +15,8 @@ function SymptomsForm(props) {
   const [painLocation, setPainLocation] = useState('');
   const [painType, setPainType] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
-
+  const [treatmentDescription, setTreatmentDescription] = useState('')
+  const [treatmentName, setTreatmentName] = useState('')
   const { symptoms, setSymptoms} = useContext(SymptomContext)
 
   const handleSubmit = async (event) => {
@@ -26,6 +27,12 @@ function SymptomsForm(props) {
       pain_level: painLevel,
       pain_location: painLocation,
       date: selectedDate
+    });
+
+     await axios.post(`${BASE_URL}/treatments/`, {
+      symptom: response.data.id,
+      treatment_name: treatmentName ,
+      treatment_description: treatmentDescription ,
     });
 
     const getSymptoms = async () => {
@@ -82,10 +89,17 @@ function SymptomsForm(props) {
           <option value="BG">Bleeding Gums</option>
           <option value="SW">Swelling</option>
           <option value="TS">Temperature Sensitive</option>
-          <option value="N">None</option>
+          <option value="N">None</option>    
         </Form.Control>
       </Form.Group >
-
+      <Form.Group className="mb-3" controlId="Form.ControlInput1">
+        <Form.Label>Treatment Name </Form.Label>
+        <Form.Control type="text" placeholder="name of treatment" value={treatmentName} onChange={(event) => setTreatmentName(event.target.value)} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="Form.ControlTextarea1">
+        <Form.Label>Treatment Description</Form.Label>
+        <Form.Control as="textarea" rows={3} value={treatmentDescription} onChange={(event) => setTreatmentDescription(event.target.value)} />
+      </Form.Group>
       <Button variant="primary" type="submit" >
         Submit
       </Button>

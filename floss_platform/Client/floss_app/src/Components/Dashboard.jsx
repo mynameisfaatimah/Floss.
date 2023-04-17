@@ -28,9 +28,6 @@ function Dashboard(props) {
         <Col md={6}>
           <TreatmentList />
         </Col>
-        {/* <Col md={6}>
-        <SymptomsList />
-        </Col> */}
          <Col md={6}>
         <SymptomsList />
         </Col> 
@@ -38,18 +35,7 @@ function Dashboard(props) {
 
       </Row>
 
-      <ul>
-        {/*symptoms.map(symptom => (
-          <li key={symptom.id}>{symptom.pain_level} - {symptom.pain_location}</li>
-        ))*/}
-      </ul> 
 
-      {/* <h1>Treatments</h1>
-      <ul>
-        {treatments.map(treatment => (
-          <li key={treatment.id}>{treatment.treatment_name} - {treatment.treatment_description}</li>
-        ))}
-      </ul> */}
     </Container>
     </>
   );

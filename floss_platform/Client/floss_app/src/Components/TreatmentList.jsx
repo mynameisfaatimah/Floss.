@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+import { BASE_URL } from '../constants';
+import axios from 'axios';
 
 function TreatmentList() {
   const [treatments, setTreatments] = useState([]);
 
-  useEffect(() => {
-    // Make a GET request to the treatment API endpoint and set the returned data to the treatments state
-    fetch('/api/treatments/')
-      .then(response => response.json())
-      .then(data => setTreatments(data))
-      .catch(error => console.log(error));
-  }, []);
-
+  useEffect(()=>{
+    const getTreatments = async () => {
+      const res = await axios.get(`${BASE_URL}/treatments/`)
+      console.log(res.data)
+      setTreatments(res.data)
+    }
+    getTreatments()
+  }, [])
   return (
     <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', color: 'white'}}>
       <h3>Treatments</h3>
@@ -26,7 +28,7 @@ function TreatmentList() {
         <tbody>
           {treatments.map(treatment => (
             <tr key={treatment.id}>
-              <td>{treatment.Symptom.pain_location}</td>
+              <td>{treatment.Symptom}</td>
               <td>{treatment.treatment_name}</td>
               <td>{treatment.treatment_description}</td>
             </tr>
