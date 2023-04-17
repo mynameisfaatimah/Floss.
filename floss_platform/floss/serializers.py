@@ -26,7 +26,7 @@ class TreatmentSerializer(serializers.ModelSerializer):
     class Meta: 
         view_name='treatment_detail',
         model = Treatment
-        fields = ['Symptom', 'treatment_name', 'treatment_description', 'Symptom_id']
+        fields = ['id', 'Symptom', 'treatment_name', 'treatment_description', 'Symptom_id']
         depth = 1
         read_only_fields = ['Symptom_id'] #also add this
 
