@@ -26,11 +26,15 @@ from .serializers import TreatmentSerializer, SymptomSerializer
 class TreatmentList(generics.ListCreateAPIView):
     queryset = Treatment.objects.all()
     serializer_class = TreatmentSerializer
+    authentication_classes = []
+    permission_classes = []
 
 
 class TreatmentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Treatment.objects.all()
     serializer_class = TreatmentSerializer
+    authentication_classes = []
+    permission_classes = []
 
 
 class SymptomList(generics.ListCreateAPIView):

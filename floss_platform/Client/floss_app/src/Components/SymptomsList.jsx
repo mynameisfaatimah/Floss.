@@ -5,8 +5,8 @@ import axios from 'axios';
 import { BASE_URL } from '../constants'
 
 function SymptomList() {
-  //  const [symptoms, setSymptoms] = useState([]);
-   const { symptoms, setSymptoms} = useContext(SymptomContext)
+
+  const { symptoms, setSymptoms} = useContext(SymptomContext)
 
 
   const handleDelete = async (id) => {

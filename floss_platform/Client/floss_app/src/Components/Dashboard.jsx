@@ -1,13 +1,14 @@
-import React,{ useState, useEffect } from 'react';
+import React,{ useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SymptomsForm from './SymptomsForm';
 import TreatmentList from './TreatmentList';
 import SymptomsList from './SymptomsList';
-import { SymptomContext,  } from '../context/SymptomsContext';
+import { SymptomContext, TreatmentContext,  } from '../context/SymptomsContext';
 import logo from '../assets/logo.png'
 
-function Dashboard(props) {
+function Dashboard() {
   //const {  symptomsList ,treatments } = props;
+  const [treatments, setTreatments] = useState([])
   const [symptoms, setSymptoms] = useState([]);
   return (
     <>
@@ -21,6 +22,7 @@ function Dashboard(props) {
     <Container fluid={true} style={{ body:'100vh', border: '1px solid black', backgroundColor: '#C3E8FF' }}>
       <Row>
       <SymptomContext.Provider value={{symptoms, setSymptoms}}>
+        <TreatmentContext.Provider value={{treatments, setTreatments}}>
 
         <Col md={6}>
           <SymptomsForm />
@@ -31,6 +33,7 @@ function Dashboard(props) {
          <Col md={6}>
         <SymptomsList />
         </Col> 
+        </TreatmentContext.Provider>
         </SymptomContext.Provider>
 
       </Row>

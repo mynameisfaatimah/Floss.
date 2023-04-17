@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 
 export const SymptomContext = createContext([]);
+export const TreatmentContext = createContext([])
 
 // export const SymptomProvider = ({ children }) => {
 //   const [symptoms, setSymptoms] = useState([]);

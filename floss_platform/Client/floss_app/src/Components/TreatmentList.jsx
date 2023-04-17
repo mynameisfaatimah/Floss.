@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect,useContext } from 'react';
 import { Table } from 'react-bootstrap';
 import { BASE_URL } from '../constants';
 import axios from 'axios';
+import { TreatmentContext } from '../context/SymptomsContext';
 
 function TreatmentList() {
-  const [treatments, setTreatments] = useState([]);
+  const {treatments, setTreatments} = useContext(TreatmentContext);
 
   useEffect(()=>{
     const getTreatments = async () => {
@@ -13,22 +14,22 @@ function TreatmentList() {
       setTreatments(res.data)
     }
     getTreatments()
-  }, [])
+  }, [setTreatments])
   return (
     <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', color: 'white'}}>
       <h3>Treatments</h3>
       <Table >
-        <thead>
+        <thead style={{ color:'white'}}>
           <tr>
             <th>Symptom</th>
             <th>Treatment Name</th>
             <th>Treatment Description</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{ color:'white'}}>
           {treatments.map(treatment => (
             <tr key={treatment.id}>
-              <td>{treatment.Symptom}</td>
+              <td>{new Date(treatment.Symptom).toLocaleDateString("en-US")}</td>
               <td>{treatment.treatment_name}</td>
               <td>{treatment.treatment_description}</td>
             </tr>
@@ -41,34 +42,3 @@ function TreatmentList() {
 
 export default TreatmentList;
 
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { ListGroup } from 'react-bootstrap';
-
-// function TreatmentList() {
-//     const [treatments, setTreatments] = useState([]);
-  
-//     // useEffect(() => {
-//     //   // Fetch treatments data from backend API
-//     //   fetch('/api/treatments/')
-//     //     .then(response => response.json())
-//     //     .then(data => setTreatments(data));
-//     // }, []);
-  
-//     return (
-//       <ListGroup>
-//         {treatments.map(treatment => (
-//           <ListGroup.Item key={treatment.id}>
-//             <h5>{treatment.name}</h5>
-//             <p>{treatment.description}</p>
-//           </ListGroup.Item>
-//         ))}
-//       </ListGroup>
-//     );
-//   }
-//   export default TreatmentList
