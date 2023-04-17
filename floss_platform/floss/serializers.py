@@ -6,7 +6,7 @@ class SymptomSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         view_name='symptoms_detail',
         model = Symptoms
-        fields = ['id', 'pain_level', 'pain_location']
+        fields = ['id', 'pain_level', 'pain_location', 'date']
 
 class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
 

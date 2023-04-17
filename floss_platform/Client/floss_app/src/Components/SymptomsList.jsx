@@ -14,8 +14,12 @@ function SymptomList() {
       // Make a DELETE request to the symptom API endpoint with the ID of the symptom to delete
       const response = await axios.delete(`${BASE_URL}/symptoms/${id}`);
       if (response.status === 204) {
+        console.log(response)
+        console.log('delete')
         // If the symptom is successfully deleted, update the symptoms state with the new list of symptoms
         const updatedSymptoms = symptoms.filter(symptom => symptom.id !== id);
+        console.log(updatedSymptoms)
+      
         setSymptoms(updatedSymptoms);
       }
     } catch (error) {
@@ -27,7 +31,6 @@ function SymptomList() {
       const getSymptoms = async () => {
         const res = await axios.get(`${BASE_URL}/symptoms/`)
         console.log(res.data)
-        console.log('hi3')
         setSymptoms(res.data)
       }
       getSymptoms()

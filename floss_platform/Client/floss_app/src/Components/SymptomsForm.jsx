@@ -14,19 +14,18 @@ function SymptomsForm(props) {
   const [painLevel, setPainLevel] = useState('');
   const [painLocation, setPainLocation] = useState('');
   const [painType, setPainType] = useState('');
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState('');
 
   const { symptoms, setSymptoms} = useContext(SymptomContext)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    
   
     const formData = new FormData(event.target);
     const response = await axios.post(`${BASE_URL}/symptoms/`, {
-       method: 'POST',
-      body: formData
+      pain_level: painLevel,
+      pain_location: painLocation,
+      date: selectedDate
     });
 
     const getSymptoms = async () => {
