@@ -25,7 +25,7 @@ This is a platform that addresses dental anxiety by providing information about 
 
 
 ## Technologies Used
-- React
+- React-Bootstrap
 - Django
 - Python
 - PostgresQL
@@ -35,7 +35,7 @@ This is a platform that addresses dental anxiety by providing information about 
 - User registration and login
 - Anxiety management tools, including deep breathing exercises and visualization techniques
 - symptom tracker to help users monitor their oral health problems
-- Dashboard for uses to view their dental anxiety, symptoms and treatment history
+- Dashboard for uses to view their symptoms, treatment history, and manage resources.
 
 
 ## Screenshots
@@ -64,24 +64,25 @@ Provide various use cases and code examples here.
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: √ in progress_ / _complete_ / _no longer being worked on_. 
 
 
 ## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- improving the overall of theme of site and adding more widgets to dashboard
+- styling buttons and adding more interactive features like hover effect, alerts, etc
 
 To do:
 - implement authentication features
-- Feature to be added 2
+- add api for dental resources componenet
+- add appointment calendar to view and add appointments as well as tracking dates of onset symptoms.
 
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by Dr. Kabani. Her ability to gain her patients trust, display of compassion and understanding helped a lot of people get the care they needed. The simpliest gestures like taking the time to explain treatments and allowing patients to brace themselves before begininning treatments or allowing them to gain their compsure by taking breaks went a long way. 
+- This project was inspired by Dr. Kabani. Her ability to gain her patients trust, display of compassion and understanding helped a lot of people get the care they needed. The simpliest gestures like taking the time to explain treatments and allowing patients get comfortable with being in the dental chair. 
 
 
 ## Contact

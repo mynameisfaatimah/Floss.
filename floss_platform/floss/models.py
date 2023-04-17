@@ -10,39 +10,39 @@ class User(models.Model):
 
 class Symptoms(models.Model):
     PAIN_LEVEL_CHOICES = (
-        ('M', 'Moderate'),
-        ('L', 'Mild'),
-        ('S', 'Severe'),
+        ('Moderate', 'Moderate'),
+        ('Mild', 'Mild'),
+        ('Severe', 'Severe'),
     )
     pain_level = models.CharField(
-        max_length=1,
+        max_length=20,
         choices=PAIN_LEVEL_CHOICES, 
         default='L',
     )
     PAIN_LOCATION_CHOICES = (
-        ('UF', 'Upper Jaw Front'),
-        ('UB', 'Upper Jaw Back'),
-        ('LF', 'Lower Jaw Front'),
-        ('LB', 'Lower Jaw Back'),
-        ('N', 'none'),
+        ('Upper Jaw Front', 'Upper Jaw Front'),
+        ('Upper Jaw Back', 'Upper Jaw Back'),
+        ('Lower Jaw Front', 'Lower Jaw Front'),
+        ('Lower Jaw Back', 'Lower Jaw Back'),
+        ('None', 'none'),
     )
     pain_location = models.CharField(
-        max_length=2,
+        max_length=25,
         choices=PAIN_LOCATION_CHOICES,
-        default='N'
+        default='None'
     )   
     PAIN_TYPE_CHOICES = (
-        ('T', 'throbbing'),
-        ('A', 'aching'),
-        ('BG', 'bleeding gums'),
-        ('SW', 'swelling'),
-        ('TS', 'temperature sensitive'),
-        ('N', 'none')
+        ('Throbbing', 'throbbing'),
+        ('Aching', 'aching'),
+        ('Bleeding Gums', 'bleeding gums'),
+        ('Swelling', 'swelling'),
+        ('Temp. Sensitive', 'temperature sensitive'),
+        ('None', 'none')
     )
     pain_type = models.CharField(
         max_length=100,
         choices=PAIN_TYPE_CHOICES,
-        default='N'
+        default='None'
     )
     date = models.CharField(
         max_length=100,

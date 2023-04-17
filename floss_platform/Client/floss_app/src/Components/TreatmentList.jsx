@@ -34,7 +34,7 @@ function TreatmentList() {
   }, [setTreatments])
   
   return (
-    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', color: 'white', width: '650px'}}>
+    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', color: 'white'}}>
       <h3 className="text-center">Treatments</h3>
       <Table fluid="true" className="table  table-hover">
         <thead style={{ color:'white'}}>
@@ -62,7 +62,7 @@ function TreatmentList() {
                   treatment.treatment_name
                 )}
               </td>
-              <td >
+              <td colSpan={3}>
                 {updatedTreatment.id === treatment.id ? (
                   <input
                     type="text"

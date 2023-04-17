@@ -76,9 +76,9 @@ function SymptomsForm() {
         <Form.Label>Pain Level</Form.Label>
         <Form.Control as="select" value={painLevel} onChange={(event) => setPainLevel(event.target.value)}>
          <option value="">Select Pain Level</option>
-          <option value="M">Moderate</option>
-          <option value="L">Mild</option>
-          <option value="S">Severe</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Mild">Mild</option>
+          <option value="Severe">Severe</option>
         </Form.Control>
       </Form.Group>
 
@@ -87,11 +87,11 @@ function SymptomsForm() {
         <Form.Control as="select" value={painLocation} onChange={(event) => setPainLocation(event.target.value)}>
           
         <option value="">Select Pain Location</option>
-          <option value="UF">Upper Jaw Front</option>
-          <option value="UB">Upper Jaw Back</option>
-          <option value="LF">Lower Jaw Front</option>
-          <option value="LB">Lower Jaw Back</option>
-          <option value="N">None</option>
+          <option value="Upper Jaw Front">Upper Jaw Front</option>
+          <option value="Upper Jaw Back">Upper Jaw Back</option>
+          <option value="Lower Jaw Front">Lower Jaw Front</option>
+          <option value="Lower Jaw Back">Lower Jaw Back</option>
+          <option value="None">None</option>
         </Form.Control>
       </Form.Group>
 
@@ -99,12 +99,12 @@ function SymptomsForm() {
         <Form.Label>Pain Type</Form.Label>
         <Form.Control as="select" value={painType} onChange={(event) => setPainType(event.target.value)}>
         <option value="">Select Type of Pain</option>
-          <option value="T">Throbbing</option>
-          <option value="A">Aching</option>
-          <option value="BG">Bleeding Gums</option>
-          <option value="SW">Swelling</option>
-          <option value="TS">Temperature Sensitive</option>
-          <option value="N">None</option>    
+          <option value="Throbbing">Throbbing</option>
+          <option value="Aching">Aching</option>
+          <option value="Bleeding Gums">Bleeding Gums</option>
+          <option value="Swelling">Swelling</option>
+          <option value="Temperature Sensitive">Temperature Sensitive</option>
+          <option value="None">None</option>    
         </Form.Control>
       </Form.Group >
       <Form.Group className="mb-3" controlId="Form.ControlInput1">
