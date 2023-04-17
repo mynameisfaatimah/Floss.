@@ -31,8 +31,8 @@ function App() {
           path="/symptomsform" element={<SymptomsForm BASE_URL={BASE_URL}/>}
           />
           <Route path="/about" element={<AboutUs />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       
     );

@@ -20,6 +20,10 @@ function TreatmentList() {
     getTreatments()
   };
 
+  const cancelUpdate = () => {
+    setUpdatedTreatment({});
+  };
+
   useEffect(()=>{
     const getTreatments = async () => {
       const res = await axios.get(`${BASE_URL}/treatments/`)
@@ -30,9 +34,9 @@ function TreatmentList() {
   }, [setTreatments])
   
   return (
-    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', color: 'white'}}>
-      <h3 class="text-center">Treatments</h3>
-      <Table >
+    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', color: 'white', width: '650px'}}>
+      <h3 className="text-center">Treatments</h3>
+      <Table fluid="true" className="table  table-hover">
         <thead style={{ color:'white'}}>
           <tr>
             <th>Symptom</th>
@@ -41,10 +45,10 @@ function TreatmentList() {
             <th></th>
           </tr>
         </thead>
-        <tbody style={{ color:'white'}}>
+        <tbody style={{ color:'white', maxWidth:'100%'}}>
           {treatments.map(treatment => (
-            <tr key={treatment.id}>
-              <td>{new Date(treatment.Symptom).toLocaleDateString("en-US")}</td>
+            <tr key={treatment.id} >
+              <td >{new Date(treatment.Symptom).toLocaleDateString("en-US")}</td>
               <td>
                 {updatedTreatment.id === treatment.id ? (
                   <input
@@ -74,12 +78,13 @@ function TreatmentList() {
               <td >
                 {updatedTreatment.id == treatment.id ? 
               <button onClick={()=>updateTreatment()}>
+                <button variant="secondary" onClick={cancelUpdate}>Cancel</button>
                 Save
               </button> : 
               <button onClick={() =>
                 setUpdatedTreatment(treatment)
               }>
-                Update
+                Edit
               </button>}
               </td>
             </tr>

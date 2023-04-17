@@ -7,7 +7,7 @@ import { SymptomContext, TreatmentContext,  } from '../context/SymptomsContext';
 import logo from '../assets/logo.png'
 
 function Dashboard() {
-  //const {  symptomsList ,treatments } = props;
+
   const [treatments, setTreatments] = useState([])
   const [symptoms, setSymptoms] = useState([]);
   return (
@@ -28,10 +28,11 @@ function Dashboard() {
           <SymptomsForm />
         </Col>
         <Col md={6}>
-          <TreatmentList />
+        <SymptomsList />
         </Col>
          <Col md={6}>
-        <SymptomsList />
+       
+        <TreatmentList />
         </Col> 
         </TreatmentContext.Provider>
         </SymptomContext.Provider>
