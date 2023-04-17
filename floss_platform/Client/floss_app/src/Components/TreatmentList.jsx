@@ -28,15 +28,17 @@ function TreatmentList() {
     }
     getTreatments()
   }, [setTreatments])
+  
   return (
     <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', color: 'white'}}>
-      <h3>Treatments</h3>
+      <h3 class="text-center">Treatments</h3>
       <Table >
         <thead style={{ color:'white'}}>
           <tr>
             <th>Symptom</th>
             <th>Treatment Name</th>
             <th>Treatment Description</th>
+            <th></th>
           </tr>
         </thead>
         <tbody style={{ color:'white'}}>
@@ -56,7 +58,7 @@ function TreatmentList() {
                   treatment.treatment_name
                 )}
               </td>
-              <td>
+              <td >
                 {updatedTreatment.id === treatment.id ? (
                   <input
                     type="text"
@@ -69,7 +71,7 @@ function TreatmentList() {
                   treatment.treatment_description
                 )}
               </td>
-              <td>
+              <td >
                 {updatedTreatment.id == treatment.id ? 
               <button onClick={()=>updateTreatment()}>
                 Save
@@ -77,7 +79,7 @@ function TreatmentList() {
               <button onClick={() =>
                 setUpdatedTreatment(treatment)
               }>
-                Edit
+                Update
               </button>}
               </td>
             </tr>

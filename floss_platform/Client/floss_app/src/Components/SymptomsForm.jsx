@@ -53,7 +53,7 @@ function SymptomsForm() {
 
   return (
     <Form onSubmit={handleSubmit} style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '80px', paddingBottom: '10px', color: 'white' }}>
-        <h3>Symtoms Form</h3>
+        <h3 class="text-center">Symtoms Form</h3>
         <Form.Group controlId="formDate" style={{ paddingBottom: '10px' }}>
   <Form.Label>Date</Form.Label>
   <DatePicker

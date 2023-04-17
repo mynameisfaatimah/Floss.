@@ -19,7 +19,7 @@ function Dashboard() {
             style={{ width: "300px", display: "block", margin: "auto", alignItems:'center' }}
           />
         </div> 
-    <Container fluid={true} style={{ body:'100vh', border: '1px solid black', backgroundColor: '#C3E8FF' }}>
+    <Container fluid={true} style={{ body:'100vh', border: '1px solid black', backgroundColor: '#C3E8FF', width: '100%'}}>
       <Row>
       <SymptomContext.Provider value={{symptoms, setSymptoms}}>
         <TreatmentContext.Provider value={{treatments, setTreatments}}>

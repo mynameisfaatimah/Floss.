@@ -23,22 +23,22 @@ function SymptomList() {
         setSymptoms(updatedSymptoms);
       }
     } catch (error) {
-      console.log(error);
+
     }
   };
 
     useEffect(()=>{
       const getSymptoms = async () => {
         const res = await axios.get(`${BASE_URL}/symptoms/`)
-        console.log(res.data)
+
         setSymptoms(res.data)
       }
       getSymptoms()
     }, [setSymptoms])
 
   return (
-    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px', width: '520px', color:'white' }}>
-      <h3>Current Symptoms</h3>
+    <div style={{ border: '1px solid black', backgroundColor: '#004C68', borderRadius: '10px', marginTop: '20px',  color:'white' }}>
+      <h3 class="text-center">Current Symptoms</h3>
       
       <Table fluid="true" >
         <thead style={{color:'white'}}>
@@ -46,6 +46,7 @@ function SymptomList() {
             <th>Date</th>
             <th>Pain Level</th>
             <th>Pain Location</th>
+            <th></th>
           </tr>
         </thead>
         <tbody style={{color:'white'}}>
