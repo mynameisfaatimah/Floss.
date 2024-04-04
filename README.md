@@ -10,13 +10,12 @@ Dental Anxiety, Treatment, and Symptoms Management System
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
+
 <!-- * [License](#license) -->
 
 
@@ -38,9 +37,7 @@ This is a platform that addresses dental anxiety by providing information about 
 - Dashboard for uses to view their symptoms, treatment history, and manage resources.
 
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+
 
 
 ## Setup
@@ -85,8 +82,6 @@ Give credit here.
 - This project was inspired by Dr. Kabani. Her ability to gain her patients trust, display of compassion and understanding helped a lot of people get the care they needed. The simpliest gestures like taking the time to explain treatments and allowing patients get comfortable with being in the dental chair. 
 
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
 
 
 <!-- Optional -->
